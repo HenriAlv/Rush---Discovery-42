@@ -13,53 +13,90 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: flex-start;
+    padding: 40px 20px;
 }
 
-/* Cabeçalho */
+/* Cabeçalho superior */
 .main-header {
     text-align: center;
     margin-bottom: 40px;
+    width: 100%;
+}
+
+.main-header p {
+    color: #8d8d99;
+    margin-top: 8px;
+    font-size: 15px;
 }
 
 .home-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 10px;
-    filter: invert(100%); /* Mantém o ícone branco no fundo escuro */
+    width: 42px;
+    height: 42px;
+    margin-bottom: 12px;
+    transition: transform 0.2s;
 }
 
-/* Grid de Containers */
+.home-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Grid/Alinhamento Geral */
 .container {
     display: flex;
     gap: 30px;
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-/* Estilização dos Cards (Home e Currículos) */
+/* --- CARD DA HOME (Chamada) --- */
 .card {
     background-color: #202024;
     border: 1px solid #323238;
     border-radius: 12px;
     padding: 30px;
-    width: 100%;
-    max-width: 500px; /* Evita que o card estique demais na página do CV */
+    width: 320px;
     text-align: center;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
+    transform: translateY(-4px);
     border-color: #00875f;
 }
 
-/* Imagens de Perfil */
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.card p {
+    color: #8d8d99;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* --- CONTAINER DO CURRÍCULO INDIVIDUAL --- */
+.cv-container {
+    background-color: #202024;
+    border: 1px solid #323238;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 680px;
+}
+
+.cv-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Imagens de Perfil Circulares */
 .avatar-container {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     margin: 0 auto 20px auto;
     border-radius: 50%;
     border: 3px solid #00875f;
@@ -76,30 +113,58 @@ body {
     object-fit: cover;
 }
 
-.card h2 {
-    font-size: 26px;
-    margin-bottom: 8px;
+h2 {
+    font-size: 28px;
     color: #ffffff;
+    margin-bottom: 6px;
 }
 
-.card p {
+.subtitle {
+    font-size: 16px;
+    color: #00b37e;
+    font-weight: 600;
+}
+
+/* Corpo de Conteúdo do CV */
+.cv-content {
+    text-align: left;
+}
+
+.cv-section-title {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 25px 0 10px 0;
+    border-left: 4px solid #00875f;
+    padding-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cv-text {
     font-size: 15px;
-    color: #8d8d99;
-    margin-bottom: 20px;
+    color: #c4c4cc;
+    line-height: 1.6;
 }
 
-/* Lista de Ícones Sociais (Isso vai consertar o tamanho gigante do LinkedIn) */
+/* Divisor estético */
+hr {
+    border: 0;
+    border-top: 1px solid #323238;
+    margin: 30px 0;
+}
+
+/* Lista de Ícones Sociais */
 .social-links {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin: 25px 0;
+    margin: 20px 0 30px 0;
 }
 
 .social-links a {
     display: inline-block;
-    width: 35px;  /* Força um tamanho fixo para a área do clique */
-    height: 35px;
+    width: 38px;
+    height: 38px;
 }
 
 .social-links img {
@@ -113,7 +178,7 @@ body {
     transform: scale(1.15);
 }
 
-/* Botão de Encaminhamento / Voltar */
+/* Botões */
 .btn-view {
     display: block;
     background-color: #00875f;
@@ -124,10 +189,27 @@ body {
     font-weight: bold;
     width: 100%;
     text-align: center;
-    margin-top: 15px;
     transition: background 0.2s ease;
 }
 
 .btn-view:hover {
     background-color: #00b37e;
+}
+
+.btn-back {
+    display: block;
+    background-color: #323238;
+    color: #e1e1e6;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #41414c;
 }
